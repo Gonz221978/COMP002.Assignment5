@@ -11,6 +11,7 @@ function range(start, end) {
     return result;
   }
 
+
 // 2. Next, write a sum function that takes an array of numbers and returns the sum of
 // these numbers. Run the example program and see whether it does indeed return 55.
 // Example output:
@@ -23,6 +24,7 @@ function sum(numbers) {
     }
     return total;
   }
+
 
 // 3. Arrays have a reverse method that changes the array by inverting the order in which
 // its elements appear. For this exercise, write two functions, reverseArray and
@@ -38,3 +40,25 @@ function sum(numbers) {
 // reverseArrayInPlace(arrayValue);
 // console.log(arrayValue); // outputs [5, 4, 3, 2, 1]
 
+function reverseArray(array) {
+    let reversed = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+      reversed.push(array[i]);
+    }
+    return reversed;
+  }
+
+
+  function reverseArrayInPlace(array) {
+    let left = 0;
+    let right = array.length - 1;
+    while (left < right) {
+      
+      let temp = array[left];
+      array[left] = array[right];
+      array[right] = temp;
+      
+      left++;
+      right--;
+    }
+  }
